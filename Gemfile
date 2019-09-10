@@ -3,6 +3,22 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+##custom gems
+# S3 for production
+gem 'aws-sdk-s3'
+# Bootstrap 4
+gem 'bootstrap'
+# Devise authentication
+gem 'devise'
+#internationalization
+gem 'i18n'
+#Jcrop for image cropping
+gem 'rails-assets-jcrop', source: 'https://rails-assets.org'
+# jquery
+gem 'jquery-rails'
+#mini_magick for image manipulation
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
