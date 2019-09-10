@@ -18,7 +18,7 @@
           <%= email_to_name(current_user.email) %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Movies</a>
+          <%= link_to 'my movies', movies_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
           <%= link_to 'log out', destroy_user_session_path, class: 'dropdown-item', method: :delete %>
         </div>

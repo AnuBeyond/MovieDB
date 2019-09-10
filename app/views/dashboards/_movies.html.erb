@@ -1,0 +1,12 @@
+<% @movies.each do |movie| %>
+<div class="col-sm-6 col-md-3">
+  <div class="card mb-4" style="width: 18rem;">
+  <%= image_tag 'prod-29.jpg', class: 'Card image cap' %>
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text"><%= truncate(sanitize(movie.text, :tags => %w()), :length => 150) %></p>
+    <%= link_to 'view', movie_path(movie), class: 'btn btn-primary' %>
+  </div>
+  </div>
+</div>
+<% end %>

@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @movies = Movie.where(category_id: params[:id]).order(:title)
   end
 
   def new

@@ -1,0 +1,23 @@
+<div class="row justify-content-center align-items-center">
+  <h1 class="text-center">All Movies</h1>
+</div>
+<div class="row">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Movie Categories
+      </div>
+      <ul class="list-group list-group-flush">
+        <% @categories.each do |category| %>
+        <%= link_to category_path(category), remote: true do %>
+        <li class="list-group-item"><%= category.name %> (<%= category.movies.count %>)</li>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+  <div class="col md-8">
+      <div class="row" id="movie-box">
+        <%= render 'movies' %>
+      </div>
+  </div>
+</div>
