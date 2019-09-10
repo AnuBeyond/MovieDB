@@ -5,11 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if notice.present? %>
+    <div class="alert alert-primary" role="alert" id="movie-alert">
+      Alert ! <%= notice %>
+    </div>
+    <% end %>
     <%= render 'shared/navbar' %>
     <%= yield %>
   </body>

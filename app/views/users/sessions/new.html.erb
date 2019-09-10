@@ -1,0 +1,27 @@
+<% if notice.present? %>
+<div class="alert alert-primary" role="alert" id="movie-alert">
+  Alert ! <%= notice %>
+</div>
+<% end %>
+<h1 class="text-center">Login Form</h1>
+<div class="container py-5">
+  <div class="col-md-6 mx-auto offset-sm-1 justify-content-center border shadow-lg p-3 mb-5 bg-white rounded">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Enter email' %>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: 'Password' %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+    <div class="form-check">
+      <%= f.check_box :remember_me, class: 'form-check-input', id: 'exampleCheck1' %>
+      <label class="form-check-label" for="exampleCheck1">Remember me</label>
+    </div>
+    <% end %>
+    <%= f.submit 'Log in', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
