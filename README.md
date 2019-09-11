@@ -1,6 +1,6 @@
 <!-- ![](app/assets/images/logo.png) -->
 
-# PASTEUR README
+# MovieDB README
 
 ## System Dependencies
 
@@ -9,6 +9,13 @@
 **rails 5.2.3**
 
 **PostgreSQL 11.2.1**
+
+### Super admin account credentials
+
+```
+username: admin@example.com
+password: 000000
+```
 
 ## Configurations
 
