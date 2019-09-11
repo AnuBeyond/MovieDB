@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path, notice: 'Movie was successfully created.'
     else
-      redirect_to movies_path, notice: 'Movie was not created.'
+      redirect_to movies_path, notice: @movie.errors.full_messages
     end
   end
 
