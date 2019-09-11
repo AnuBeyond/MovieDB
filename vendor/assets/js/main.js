@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 	}, 2000);
 
 //user rating add function
-	$(".user-rating").click(function(){
+	$(document).on("click", ".user-rating", function(e) {
 		$.ajax({
 			type: 'POST',
 			url: "ratings",

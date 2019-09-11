@@ -3,7 +3,7 @@ class Movie < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :title
-  validate :image_type
+  # validate :image_type
 
   def image_type
     if image.attached? && !image.content_type.in?(%w(image/png))
