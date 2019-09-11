@@ -2,7 +2,16 @@ class Movie < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-  validates :title, presence: true
+  validates_presence_of :title
+  validate :image_type
+
+  def image_type
+    if image.attached? && !image.content_type.in?(%w(image/png))
+      errors.add(:image, 'must be jpeg, jpg or png')
+    elsif image.attached? == false
+      errors.add(:image, 'movie must have a image')
+    end
+  end
 
   has_one_attached :image
 
