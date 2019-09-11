@@ -1,0 +1,32 @@
+<div id="content">
+<section id="project">
+	<div id="container" class="container">
+		<div class="row">
+			<div class="col-sm-10 offset-sm-1 justify-content-center border shadow-sm p-3 mb-5 bg-white rounded">
+				<h4 class="text-center"><%= @movie.title %></h4>
+        <p class="row justify-content-center align-items-center"><%= render 'dashboards/rating', movie: @movie %></p>
+				<p class="text-center">
+					<%= image_tag(@movie.thumb) %>
+				</p>
+          <span class="row"><span class="align-items-left"><% 5.times do %><%= image_tag 'star-light.png', class: 'star-rating' %><% end %></span><span class="mt-2 ml-1"><%= star_count(@movie, 5) %> votes</span></span>
+          <span class="row"><span class="align-items-left"><% 4.times do %><%= image_tag 'star-light.png', class: 'star-rating' %><% end %></span><span class="mt-2 ml-2"><%= star_count(@movie, 4) %> votes</span></span>
+          <span class="row"><span class="align-items-left"><% 3.times do %><%= image_tag 'star-light.png', class: 'star-rating' %><% end %></span><span class="mt-2 ml-3"><%= star_count(@movie, 3) %> votes</span></span>
+          <span class="row"><span class="align-items-left"><% 2.times do %><%= image_tag 'star-light.png', class: 'star-rating' %><% end %></span><span class="mt-2 ml-4"><%= star_count(@movie, 2) %> votes</span></span>
+          <span class="row"><span class="align-items-left"><% 1.times do %><%= image_tag 'star-light.png', class: 'star-rating' %><% end %></span><span class="mt-2 ml-5"><%= star_count(@movie, 1) %> votes</span></span>
+        <p>
+          <strong>Category:</strong> <%= @movie.category.name %>
+        </p>
+        <p>
+          <strong>Description:</strong> <%= @movie.text %>
+        </p>
+
+				<p class="text-center">
+					<%= link_to 'Edit', edit_movie_path(@movie) %> |
+					<%= link_to 'Back', movies_path %> |
+				</p>
+
+			</div>
+		</div>
+	</div>
+</section>
+</div>

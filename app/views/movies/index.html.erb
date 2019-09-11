@@ -16,7 +16,7 @@
   <tbody>
     <% @movies.each do |movie| %>
     <tr>
-      <td></td>
+      <td><%= image_tag movie.small if movie.image.attached? %></td>
       <td><%= movie.title %></td>
       <td><%= movie.category.name %></td>
       <td><%=  %></td>

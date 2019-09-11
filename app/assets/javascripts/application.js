@@ -4,5 +4,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jcrop
 //= require main
 //= require_tree .

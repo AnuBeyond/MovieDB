@@ -12,6 +12,9 @@
         <li class="list-group-item"><%= category.name %> (<%= category.movies.count %>)</li>
         <% end %>
         <% end %>
+        <%= link_to root_path do %>
+        <li class="list-group-item">all(<%= @movie_count %>)</li>
+        <% end %>
       </ul>
     </div>
 

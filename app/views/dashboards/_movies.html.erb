@@ -1,11 +1,23 @@
 <% @movies.each do |movie| %>
 <div class="col-sm-6 col-md-3">
   <div class="card mb-4" style="width: 18rem;">
-  <%= image_tag 'prod-29.jpg', class: 'Card image cap' %>
+  <%= image_tag movie.thumb, class: 'Card image cap' if movie.image.attached? %>
   <div class="card-body">
+    <input type="hidden" name="quantity" value="<%= movie.id %>">
     <h5 class="card-title"><%= movie.title %></h5>
+    <span id="movie-<%= movie.id %>">
+      <%= render 'dashboards/rating', movie: movie %>
+    </span>
     <p class="card-text"><%= truncate(sanitize(movie.text, :tags => %w()), :length => 150) %></p>
     <%= link_to 'view', movie_path(movie), class: 'btn btn-primary' %>
+    <br>
+    <% if not_rated(movie.id) %>
+    <span class="align-bottom" id="rating-bar-<%= movie.id %>">Rate This:
+      <% 5.times do |index| %>
+      <%=  image_tag 'star-dark.png', class: 'star-rating user-rating', id: index+1 %>
+      <% end %>
+    </span>
+    <% end %>
   </div>
   </div>
 </div>

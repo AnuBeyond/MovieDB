@@ -5,6 +5,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.string :title
       t.text :text
+      t.json :crop_settings
 
       t.timestamps
     end

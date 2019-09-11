@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.where(user_id: current_user.id)
+    @rating = Rating.new
   end
 
   def show
@@ -50,6 +51,6 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :text, :category_id, :user_id, :image)
+    params.require(:movie).permit(:title, :text, :category_id, :user_id, :image, :crop_x, :crop_y, :crop_w, :crop_h)
   end
 end
