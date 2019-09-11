@@ -1,0 +1,28 @@
+<div class="row justify-content-center align-items-center">
+  <h1 class="text-center">Movie Categories</h1>
+  <%= link_to 'new category', new_category_path, class: 'btn btn-success', remote: true %>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Category Name</th>
+      <th scope="col">Category Parent</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= category.parent_name %></td>
+      <td>
+        <%= link_to 'edit', edit_category_path(category), remote: true %>
+        <%= link_to 'delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="" id="category_content"></div>

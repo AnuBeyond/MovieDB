@@ -1,0 +1,10 @@
+<% if (1..5).include?(movie.rating_count) %>
+ <%  movie.rating_count.times do %>
+    <%= image_tag 'star-light.png', class: 'star-rating' %>
+    <% end %>
+<% else %>
+<% 5.times do %>
+    <%= image_tag 'star-dark.png', class: 'star-rating' %>
+  <% end %>
+  <% end %>
+(<%= movie.ratings.count %> vote)

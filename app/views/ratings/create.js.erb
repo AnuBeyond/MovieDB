@@ -1,0 +1,3 @@
+$("#movie-box").find("#movie-<%= @movie.id %>").html("<%= j render('dashboards/rating', movie: @movie) %>");
+
+$("#movie-box").find("#rating-bar-<%= @movie.id %>").hide();
